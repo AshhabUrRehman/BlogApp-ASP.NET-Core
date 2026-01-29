@@ -1,0 +1,68 @@
+﻿@model Project1.Models.ViewModels.BlogPostViewModel
+
+@{
+    ViewData["Title"] = "Create Post";
+}
+
+<style>
+    .content-wrapper {
+        padding: 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+        font-family: sans-serif;
+    }
+</style>
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-6">
+            <h2>@ViewData["Title"]</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a class="btn btn-primary" asp-controller="BlogPost" asp-action="Index">Back to List</a>
+        </div>
+    </div>
+
+    <hr />
+
+    <form asp-action="Create" asp-controller="BlogPost" method="post" enctype="multipart/form-data">
+        <div class="validation-summary">
+            <div asp-validation-summary="All" class="text-danger"></div>
+        </div>
+        <div class="form-group">
+            <label asp-for="BlogPost.Title"></label>
+            <input asp-for="BlogPost.Title" class="form-control"/>
+            <span asp-validation-for="BlogPost.Title" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="BlogPost.CategoryId"></label>
+            <select asp-for="BlogPost.CategoryId" asp-items="Model.Categories" class="form-control">
+                <option value="">Select Category</option>
+            </select>
+            <span asp-validation-for="BlogPost.CategoryId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="BlogPost.Author"></label>
+            <input asp-for="BlogPost.Author" class="form-control" />
+            <span asp-validation-for="BlogPost.Author" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="BlogPost.Content"></label>
+            <textarea asp-for="BlogPost.Content" class="form-control" rows="5"></textarea>
+            <span asp-validation-for="BlogPost.Content" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="FeatureImage"></label>
+            <input asp-for="FeatureImage" class="form-control"/>
+        </div>
+        <button type="submit" class="btn btn-primary mt-1">Create</button>
+        <a class="btn btn-secondary mt-1" asp-controller="BlogPost" asp-action="Index">Back to List</a>
+    </form>
+</div>
+@section scripts{
+<script src="https://cdn.tiny.cloud/1/o0s01x0c1lsj1x9s0nnjjndrzs3qd7qiweayjgobwbi8cqpv/tinymce/8/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
+<script>
+          tinymce.init({
+          selector: 'textarea'
+        });
+</script>
+}
