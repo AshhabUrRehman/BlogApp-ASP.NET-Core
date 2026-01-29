@@ -20,9 +20,9 @@ A simple blog web application built with ASP.NET Core MVC with role-based author
 
 
 ## GitHub Repository
-You can check out the source code here: [GitHub Repo](https://github.com/username/BlogApp-ASP.NET-Core)
+You can check out the source code here: [GitHub Repo](https://github.com/AshhabUrRehman/BlogApp-ASP.NET-Core.git)
 
 ## How to Run Locally
 1. Clone the repository:
    ```bash
-   git clone https://github.com/username/BlogApp-ASP.NET-Core.git
+   https://github.com/AshhabUrRehman/BlogApp-ASP.NET-Core.git
